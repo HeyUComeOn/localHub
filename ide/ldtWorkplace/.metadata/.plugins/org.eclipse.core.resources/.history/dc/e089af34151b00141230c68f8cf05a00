@@ -1,7 +1,0 @@
-local f=assert(io.open("a.txt",'r'))
-local t=f:read("*all")
-print(t)
-f:close()
---io.open("a.txt",'a')
---io.open("a.txt",'r')
---io.open("a.txt",'b')

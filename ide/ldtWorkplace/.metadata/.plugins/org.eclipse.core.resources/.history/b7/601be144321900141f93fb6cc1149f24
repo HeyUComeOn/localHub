@@ -1,5 +1,0 @@
-
-local f = assert(io.open("forUsedFile.txt",'r'));
-local str=f:read("*all");
-f:close()
-print str

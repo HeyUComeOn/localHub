@@ -1,3 +1,0 @@
-local testStr="HelloLua,HelloWorld"
-j,k=string.find(testStr,"Hello")
-print(j,k)

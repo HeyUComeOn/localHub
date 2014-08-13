@@ -1,4 +1,0 @@
---數學庫可以直接使用，源碼已經集成
-
---獲取系統時間，我們通過os.time，在單機做每日應用的時候
-print(os.time())
