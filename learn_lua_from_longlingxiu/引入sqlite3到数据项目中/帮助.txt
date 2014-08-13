@@ -1,0 +1,8 @@
+下载sqlite源码，将其中sqlite3.c和sqlite3.h取出，
+再到lua.sqlite.org下载，
+提取其中lsqlite3.c
+将三个文件导入到一个文件夹命名为lsqlite，然后在其中再创建一个文件lsqlite3.h，添加一句代码int luaopen_lsqlite3(lua_State *L);
+
+将文件夹lua源码和lsqlite导入cocos2dx工程，编译
+内部设置见LuaEngine源码
+

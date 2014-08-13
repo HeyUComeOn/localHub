@@ -1,0 +1,12 @@
+--1.string.find的使用
+local testStr="HelloLua,HelloWorld"
+j,k=string.find(testStr,"Hello")
+print(j,k)-->1    5
+
+i = string.find(testStr,"ok")
+print(i)
+
+--2.string.match()函数的使用
+
+m= string.match(testStr,"Hello")
+print(m)

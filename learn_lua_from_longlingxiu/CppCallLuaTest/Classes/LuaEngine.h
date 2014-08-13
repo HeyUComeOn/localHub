@@ -1,0 +1,20 @@
+#ifndef __TestLuaplugin__LuaEngine__
+#define __TestLuaplugin__LuaEngine__
+#include "cocos2d.h"
+#include "lua/lua.hpp"
+
+class LuaEngine {
+public:
+	LuaEngine();
+	~LuaEngine();
+	static LuaEngine*getInstance();
+	void callLuaFunction();
+    void configWindowsContentSize(int*pWidth ,int*pHeight);
+    void test_read_table();
+private:
+	static LuaEngine* i;
+	void init();
+private:
+	lua_State* m_pluaState;
+};
+#endif

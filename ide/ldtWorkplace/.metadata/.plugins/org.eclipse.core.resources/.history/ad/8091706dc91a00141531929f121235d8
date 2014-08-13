@@ -1,0 +1,18 @@
+以下均爲table的函數
+--1.“插入”
+t ={
+1,
+2，
+3
+}
+
+table.insert(t,1,10)
+--table.insert(t,0,8)--報錯，第一個位置索引不是0，是1
+table.insert(t,20) --自動添加到末尾
+
+
+
+for key, var in ipairs(t) do
+print(key,var)
+	
+end

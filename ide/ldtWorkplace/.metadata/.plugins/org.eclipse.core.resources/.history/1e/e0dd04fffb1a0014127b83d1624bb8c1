@@ -1,0 +1,9 @@
+--print默认有换行
+io.write("sin(3)=",math.sin(3),"\n")
+
+io.write(string.format("sin(3)=%.4f\n",math.sin(3)))
+--io.write("12"..12..1)--错误写法
+io.write("12",12,1,"\n")
+s=12
+f=1
+print("12"..s..f)

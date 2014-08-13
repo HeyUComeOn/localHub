@@ -1,0 +1,3 @@
+local testStr="HelloLua,HelloWorld"
+j,k=string.find("Hello")
+print(j,k)

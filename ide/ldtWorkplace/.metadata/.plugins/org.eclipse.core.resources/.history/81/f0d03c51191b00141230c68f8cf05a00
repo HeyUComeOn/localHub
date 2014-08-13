@@ -1,0 +1,14 @@
+local f=assert(io.open("D:\\Documents\\GitHub\\localHub\\ide\\ldtWorkplace\\io_test\\src\\a.txt",'r'))
+local t=f:read("*all")
+print(t)
+f:close()
+
+function write_st(message)
+local f=assert(io.open("D:\\Documents\\GitHub\\localHub\\ide\\ldtWorkplace\\io_test\\src\\a.txt",'a'))
+f:write(message)
+f:close()
+end
+
+write_st("kkkkkkkkk")
+--io.open("a.txt",'a')
+--io.open("a.txt",'r')

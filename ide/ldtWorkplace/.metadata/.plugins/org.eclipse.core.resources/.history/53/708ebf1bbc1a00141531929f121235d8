@@ -1,0 +1,18 @@
+function newAccount(initializeBalance)
+  local self = {balance=initializeBalance}
+  local show =function (v)
+    self.balance = self.balance -v
+
+  end
+  local getBalance=function()
+    return self.balance
+  end
+  return{
+    show =show,
+    getBalance=getBalance
+  }
+end
+acc=newAccount(200)
+print(acc.getBalance)
+acc.show(100)
+print(acc.getBalance)

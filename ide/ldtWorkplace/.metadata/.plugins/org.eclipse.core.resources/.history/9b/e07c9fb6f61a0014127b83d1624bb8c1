@@ -1,0 +1,7 @@
+--1.string.findµÄÊ¹ÓÃ
+local testStr="HelloLua,HelloWorld"
+j,k=string.find(testStr,"Hello")
+print(j,k)-->1    5
+
+k = string.find(testStr,"ok")
+print(k)

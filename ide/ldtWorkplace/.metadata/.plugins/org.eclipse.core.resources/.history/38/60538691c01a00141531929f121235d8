@@ -1,0 +1,7 @@
+--數學庫可以直接使用，源碼已經集成
+
+--獲取系統時間，我們通過os.time，在單機做每日登錄的時候就可以獲取當前時間和本機記錄時間的對比來判斷是否需要提示用戶可以領取獎勵
+print(os.time())
+
+
+math.
