@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<cache:CacheIndex xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:cache="http://eclipse.org/dltk/cache_model" lastIndex="118" environment="org.eclipse.dltk.core.environment.localEnvironment">
+<cache:CacheIndex xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:cache="http://eclipse.org/dltk/cache_model" lastIndex="122" environment="org.eclipse.dltk.core.environment.localEnvironment">
   <entries path="D:/Documents/GitHub/localHub/ide/ldtWorkplace/luatest1/src" timestamp="1406637746192" lastAccessTime="1406868258419">
     <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/361354536/1.idx"/>
   </entries>
@@ -15,7 +15,7 @@
   <entries path="D:/Documents/GitHub/localHub/ide/ldtWorkplace/Module/src" timestamp="1406890238688" lastAccessTime="1407926885782">
     <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/3686527812/25.idx"/>
   </entries>
-  <entries path="D:/Documents/GitHub/localHub/ide/ldtWorkplace/object_test/src" timestamp="1407034712195" lastAccessTime="1407926897329">
+  <entries path="D:/Documents/GitHub/localHub/ide/ldtWorkplace/object_test/src" timestamp="1407034712195" lastAccessTime="1408181848344">
     <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/3062411834/69.idx"/>
   </entries>
   <entries path="D:/Documents/GitHub/localHub/ide/ldtWorkplace/math_test/src" timestamp="1407036911269" lastAccessTime="1407036911878">
@@ -42,12 +42,21 @@
     <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/3002472951/101.idx"/>
   </entries>
   <entries path="D:/Documents/GitHub/localHub/ide/ldtWorkplace/io_test/src/a.txt" timestamp="1407074184726" lastAccessTime="1407925628970"/>
-  <entries path="D:/Documents/GitHub/localHub/ide/ldtWorkplace/xml_paser/src" timestamp="1407926410409" lastAccessTime="1407928239469">
+  <entries path="D:/Documents/GitHub/localHub/ide/ldtWorkplace/xml_paser/src" timestamp="1407926410409" lastAccessTime="1408179467265">
     <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/2196732503/117.idx"/>
   </entries>
   <entries path="D:/Documents/GitHub/localHub/ide/ldtWorkplace/Serialization/src/main.lua" timestamp="1406971390938" lastAccessTime="1407926894505"/>
   <entries path="D:/Documents/GitHub/localHub/ide/ldtWorkplace/table_package_test/src/table.lua" timestamp="1407072746858" lastAccessTime="1407926899194"/>
   <entries path="D:/Documents/GitHub/localHub/ide/ldtWorkplace/io_test/src/simple_io_test.lua" timestamp="1407065595235" lastAccessTime="1407926927063"/>
-  <entries path="D:/Documents/GitHub/localHub/ide/ldtWorkplace/xml_paser/src/slaxml.lua" timestamp="1397805060000" lastAccessTime="1407928239373"/>
-  <entries path="D:/Documents/GitHub/localHub/ide/ldtWorkplace/xml_paser/src/main.lua" timestamp="1407928041164" lastAccessTime="1407928239469"/>
+  <entries path="D:/Documents/GitHub/localHub/ide/ldtWorkplace/xml_paser/src/slaxml.lua" timestamp="1397805060000" lastAccessTime="1408179467264">
+    <attributes name="indexed" location="2838196607/2482784857/121.idx"/>
+  </entries>
+  <entries path="D:/Documents/GitHub/localHub/ide/ldtWorkplace/xml_paser/src/main.lua" timestamp="1407928041164" lastAccessTime="1408179466087">
+    <attributes name="indexed" location="2838196607/2482784857/119.idx"/>
+  </entries>
+  <entries path="D:/Documents/GitHub/localHub/ide/ldtWorkplace/xml_paser/src/content.xml" timestamp="1407927111820" lastAccessTime="1408179465998"/>
+  <entries path="D:/Documents/GitHub/localHub/ide/ldtWorkplace/object_test/src/main.lua" timestamp="1406976136059" lastAccessTime="1408179471924"/>
+  <entries path="D:/Documents/GitHub/localHub/ide/ldtWorkplace/object_test/src/muti_extends.lua" timestamp="1406978582925" lastAccessTime="1408179472004"/>
+  <entries path="D:/Documents/GitHub/localHub/ide/ldtWorkplace/object_test/src/private_test.lua" timestamp="1407036370172" lastAccessTime="1408179472021"/>
+  <entries path="D:/Documents/GitHub/localHub/ide/ldtWorkplace/object_test/src/extend_test.lua" timestamp="1407034429636" lastAccessTime="1408179472045"/>
 </cache:CacheIndex>

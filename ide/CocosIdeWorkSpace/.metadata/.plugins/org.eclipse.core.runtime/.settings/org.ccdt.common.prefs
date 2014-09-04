@@ -1,8 +1,0 @@
-eclipse.preferences.version=1
-org.ccdt.common.ant_path=D\:\\Program Files (x86)\\Ant\\apache-ant-1.9.4
-org.ccdt.common.jdk_path=D\:\\Program Files (x86)\\Java\\jdk1.8.0_05\\bin
-org.ccdt.common.lua_engine_custompath=D\:\\Downloads\\cocos2d-x-3.2
-org.ccdt.common.lua_engine_path=D\:\\Downloads\\cocos2d-x-3.2
-org.ccdt.common.ndk_path=D\:\\AndroidNDK\\android-ndk-r9d
-org.ccdt.common.python_path=D\:\\Program Files (x86)\\Python27
-org.ccdt.common.sdk_path=D\:\\Program Files (x86)\\ADT_bundle\\adt-bundle-windows-x86_64-20140702\\sdk

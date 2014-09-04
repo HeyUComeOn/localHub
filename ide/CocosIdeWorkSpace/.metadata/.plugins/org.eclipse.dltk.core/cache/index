@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="ASCII"?>
-<cache:CacheIndex xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:cache="http://eclipse.org/dltk/cache_model" lastIndex="10" environment="org.eclipse.dltk.core.environment.localEnvironment">
-  <entries path="D:/Documents/GitHub/localHub/ide/CocosIdeWorkSpace/CocosLuaGame/src" timestamp="1406764173050" lastAccessTime="1406865159381">
-    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/1394031053/1.idx"/>
-  </entries>
-  <entries path="D:/Documents/GitHub/localHub/ide/CocosIdeWorkSpace/CocosLuaGame/src/main.lua" timestamp="1406764173051" lastAccessTime="1406865159376">
-    <attributes name="indexed" location="2838196607/510456311/9.idx"/>
-  </entries>
-</cache:CacheIndex>

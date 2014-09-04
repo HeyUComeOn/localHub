@@ -1,0 +1,22 @@
+--[[local myClass = {
+  name = "x_mitsui"
+}
+
+function myClass:showName(  )
+  print (myClass.name)
+	
+end
+
+return myClass]]
+
+
+
+Account = {balance = 0}
+
+function Account:withdraw(v)
+   self.balance = self.balance - v
+   print(balance)
+end
+--调用代码可改为：
+a = Account; Account = nil
+a:withdraw(100.00)
