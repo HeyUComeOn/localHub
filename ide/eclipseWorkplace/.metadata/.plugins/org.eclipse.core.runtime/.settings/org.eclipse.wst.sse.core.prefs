@@ -1,2 +1,2 @@
 eclipse.preferences.version=1
-task-tag-projects-already-scanned=Luajavabridge,libcocos2dx
+task-tag-projects-already-scanned=appcompat_v7,CocoAdDemo,libcocos2dx,S01_05,S01_07_Layerout,S01_08_Margin_Padding,S01_09_CheckBox,S01_10_Radio,S01_11_ImageView,S01_12_CaiQuanYouXi,S01_12_Linear_Layout,S01_13_Relative_Layout,S01_14_Relative_Layout,S01_15_Login,S01_15_Relative_Layout,S01_16_TimePicker,S01_16_00_DatePicker,S01_17_ProgressBar

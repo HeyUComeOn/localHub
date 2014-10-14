@@ -1,0 +1,64 @@
+package com.mitsui0109.s01_09_checkbox;
+
+import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+
+
+public class MainActivity extends ActionBarActivity {
+
+	private CheckBox EatBox;
+	private CheckBox SleepBox;
+	private CheckBox DotaBox;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        
+        EatBox = (CheckBox)findViewById(R.id.EAT_ID);
+        SleepBox = (CheckBox)findViewById(R.id.SLEEP_ID);
+        DotaBox = (CheckBox)findViewById(R.id.DOTA_ID);
+
+        OnBoxClickListener onBoxClickListener = new OnBoxClickListener();
+        EatBox.setOnClickListener(onBoxClickListener);
+        SleepBox.setOnClickListener(onBoxClickListener);
+        DotaBox.setOnClickListener(onBoxClickListener);
+
+    }
+
+    class OnBoxClickListener implements OnClickListener
+    {
+    	@Override
+    	public void onClick(View v) {
+    		// TODO Auto-generated method stub
+    		CheckBox Box = (CheckBox)v;
+    		System.out.println(Box.getText());//也可以通过View.getID() switch判断
+    		if(Box.isChecked())
+    			System.out.println("被选中了");
+    	}
+    }
+    
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        if (id == R.id.action_settings) {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete element from project &apos;S01_16_DataPicker&apos;&#x0D;&#x0A;- Original project: &apos;S01_16_DataPicker&apos;&#x0D;&#x0A;- Original element: &apos;S01_16_DataPicker/src/com.mitsui0116.s01_16_datapicker&apos;" description="Delete element" element1="/src&lt;com.mitsui0116.s01_16_datapicker" element2="/src&lt;com.mitsui0116" elements="2" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1413215395646" subPackages="false" version="1.0"/>
+</session>

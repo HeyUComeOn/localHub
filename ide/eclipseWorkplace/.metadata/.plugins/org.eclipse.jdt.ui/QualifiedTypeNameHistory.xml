@@ -1,2 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="android.widget.TextView"/>
+<fullyQualifiedTypeName name="com.mitsui.s01_05.R.id"/>
+<fullyQualifiedTypeName name="com.mitsui0109.s01_09_checkbox.R.id"/>
+<fullyQualifiedTypeName name="android.graphics.RadialGradient"/>
+<fullyQualifiedTypeName name="android.widget.RadioGroup"/>
+<fullyQualifiedTypeName name="java.util.RandomAccess"/>
+<fullyQualifiedTypeName name="android.widget.RadioGroup.OnCheckedChangeListener"/>
+<fullyQualifiedTypeName name="android.widget.RadioButton"/>
+<fullyQualifiedTypeName name="com.example.s01_10_radio.R.id"/>
+<fullyQualifiedTypeName name="android.widget.CompoundButton.OnCheckedChangeListener"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="com.mitsui0111.s01_11_imageview.R.id"/>
+<fullyQualifiedTypeName name="com.mitsui0111.s01_11_imageview.R.drawable"/>
+<fullyQualifiedTypeName name="android.widget.ImageView.ScaleType"/>
+<fullyQualifiedTypeName name="android.widget.TimePicker"/>
+<fullyQualifiedTypeName name="com.mitsui0116.s01_16_timepicker.R.id"/>
+<fullyQualifiedTypeName name="android.animation.TimeAnimator.TimeListener"/>
+<fullyQualifiedTypeName name="android.widget.TimePicker.OnTimeChangedListener"/>
+<fullyQualifiedTypeName name="android.widget.DatePicker"/>
+<fullyQualifiedTypeName name="com.mitsui011600.s01_16_00_datepicker.R.id"/>
+<fullyQualifiedTypeName name="android.widget.ProgressBar"/>
+<fullyQualifiedTypeName name="android.R.bool"/>
+<fullyQualifiedTypeName name="com.mitsui0117s01_17_progressbar.BuildConfig"/>
+<fullyQualifiedTypeName name="android.widget.Button"/>
+<fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
+<fullyQualifiedTypeName name="com.mitsui0117s01_17_progressbar.R.id"/>
+<fullyQualifiedTypeName name="android.widget.SeekBar"/>
+<fullyQualifiedTypeName name="android.widget.SeekBar.OnSeekBarChangeListener"/>
+<fullyQualifiedTypeName name="android.widget.RatingBar"/>
+<fullyQualifiedTypeName name="com.mitsui011800.s01_18_ratingbar.R.id"/>
+<fullyQualifiedTypeName name="android.widget.RatingBar.OnRatingBarChangeListener"/>
+</qualifiedTypeNameHistroy>
