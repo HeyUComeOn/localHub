@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;HelloJni/jni/com_example_hellojni_HelloJni.h&apos;" deleteContents="false" description="Delete resource &apos;HelloJni/jni/com_example_hellojni_HelloJni.h&apos;" element1="/HelloJni/jni/com_example_hellojni_HelloJni.h" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1413625092624"/>
+</session>

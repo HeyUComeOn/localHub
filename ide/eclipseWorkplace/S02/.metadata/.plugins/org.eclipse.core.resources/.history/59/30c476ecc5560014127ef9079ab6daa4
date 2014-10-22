@@ -1,0 +1,5 @@
+package com.cocos2dx.jni;
+
+public class StartGame {
+
+}

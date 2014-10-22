@@ -1,0 +1,87 @@
+package com.mitsui.game;
+
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnCancelListener;
+import android.text.TextUtils;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.qihoopay.insdk.matrix.Matrix;
+import com.test.sdk.activity.SdkUserBaseActivity;
+import com.test.sdk.appserver.QihooUserInfo;
+import com.test.sdk.appserver.QihooUserInfoListener;
+import com.test.sdk.appserver.QihooUserInfoTask;
+import com.test.sdk.appserver.TokenInfo;
+import com.test.sdk.appserver.TokenInfoListener;
+import com.test.sdk.appserver.TokenInfoTask;
+import com.test.sdk.utils.ProgressUtil;
+
+
+public class StartActivity extends SdkUserBaseActivity implements TokenInfoListener, QihooUserInfoListener{
+
+	private static final String TAG = "SdkShowAllActivity";
+
+    private TextView mLoginResultView;
+
+    private ProgressDialog mProgress;
+
+    private TokenInfo mTokenInfo;
+
+    private QihooUserInfo mQihooUserInfo;
+
+    private boolean mIsLandscape;
+
+    private TokenInfoTask mTokenTask;
+    private QihooUserInfoTask mUserInfoTask;
+    
+	@Override
+	public void onGotAuthorizationCode(String code) {
+		// TODO Auto-generated method stub
+		if (TextUtils.isEmpty(code)) {
+            Toast.makeText(this, R.string.get_code_fail, Toast.LENGTH_LONG).show();
+        } else {
+            clearLoginResult();
+            mTokenTask = TokenInfoTask.newInstance();
+            // 提示用户进度
+            mProgress = ProgressUtil.show(this, R.string.get_token_title,
+                    R.string.get_token_message, new OnCancelListener() {
+
+                        @Override
+                        public void onCancel(DialogInterface dialog) {
+                            if (mTokenTask != null) {
+                                mTokenTask.doCancel();
+                            }
+                        }
+                    });
+
+            // 请求应用服务器，用AuthorizationCode换取AccessToken
+            mTokenTask.doRequest(this, code, Matrix.getAppKey(this), this);
+        }
+	}
+
+	@Override
+	public void onGotError(int errCode) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onGotUserInfo(QihooUserInfo userInfo) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onGotTokenInfo(TokenInfo tokenInfo) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	 private void clearLoginResult() {
+	        mTokenInfo = null;
+	        mQihooUserInfo = null;
+	        //updateUserInfoUi();
+	    }
+
+}

@@ -1,7 +1,0 @@
-package com.mitsui0202.s02_02_lifecycle;
-
-import android.app.Activity;
-
-public class OtherActivity extends Activity {
-
-}
