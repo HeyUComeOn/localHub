@@ -32,10 +32,6 @@ public:
     @param  the pointer of the application
     */
     virtual void applicationWillEnterForeground();
-    
-    void init_lua();
-private:
-    lua_State *m_pLuaState;
 };
 
 #endif // _APP_DELEGATE_H_

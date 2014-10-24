@@ -1,24 +1,10 @@
+username="heywegolua"
+num=19
+bu=true
+table5={"123","234","345"}
 
-
-
-print(getMyName())
-
-print(showOnePara("ZhangSan"))
-
-showThreeParas("DNA","5678","A32")
--------------------------------------
-print(showReturn0())
-print(showReturn1())
-print(showReturn2())
--------------------------------------
-local t1= showTable1()
-
-for k,v in pairs(t1) do
-	print(k,v)
+function getrlt( x ,y ) 
+	return x ,y
 end
--------------------------------------
-local t2= showTable2()
 
-for k,v in pairs(t2) do
-	print(k,v)
-end
+print (show())

@@ -2,7 +2,23 @@
 #include <string>
 #include <iostream>
 USING_NS_CC;
+/*
+	//×ÖÌå£ºGB2312
+	1.ÔÚluaÓëC/C++ÓïÑÔ»òÕßC/C++ÓïÑÔÍ¨ÐÅ¹ý³ÌÖÐ£¬Êµ¼ÊÉÏ¸ü¶àµÄÊ±ºò¾ÍÊÇ¶ÔÕ»¶¥µÄÔªËØ½øÐÐ²Ù×÷
+	2.´ÓÕ»¶¥ÍùÏÂ¿´Ë÷ÒýÓ¦¸ÃÊÇ-1£¬-2£¬-3
+	3.´ÓÕ»µ×ÍøÉÏ¿´Ë÷ÒýÓ¦¸ÃÊÇ1£¬2£¬3
+	4.ÎÞÂÛluaµ÷ÓÃC/C++»¹ÊÇC/C++µ÷ÓÃlua£¬²ÎÊýÖµ¶¼ÊÇ×îÏÈ±»Ñ¹ÈËÕ»¶¥µÄ£¬×îºó·µ»ØÖµ²Å±»Ñ¹ÈËÕ»¶¥
+*/
 
+/*
+1.ÔÚwindowsÏÂÓÃFileUtils::getInstance()->fullPathForFilenameÎÞ·¨Êä³ömy.luaÖÐµÄprintµÄ½á¹û
+Õâ¸öÔÚD:Lua/testÖÐ¿ÉÒÔ´òÓ¡£¬ÄÇ¸öÊÇÒ»¸ö¿ØÖÆÌ¨³ÌÐò
+
+2.ÓÉÓÚ¿ÉÄÜ²»ÊÇ¿ØÖÆÌ¨³ÌÐòµÄÔ­Òò°É£¬
+3.»¹Î´¸ã¶®luaÕ»Õâ¸ö¶«Î÷
+
+
+*/
 LuaEngine* LuaEngine::i= NULL;
 
 LuaEngine::LuaEngine()
@@ -29,6 +45,7 @@ LuaEngine* LuaEngine::getInstance(){
 	return i;
 }
 
+//´Ëº¯ÊýÓÃÓÚluaµ÷ÓÃ
 static int l_show(lua_State* L)
 {
 	lua_pushstring(L, "String from C/C++");
@@ -37,183 +54,168 @@ static int l_show(lua_State* L)
 }
 void LuaEngine::init()
 {
-    //åˆ›å»ºä¸€ä¸ªæ–°çš„çŠ¶æ€ï¼Œæ¯æ¬¡è¯»å–æ–°çš„æ–‡ä»¶éƒ½è¦åˆ›å»ºä¸€ä¸ªæ–°çš„çŠ¶æ€
+	//´´½¨Ò»¸ölua×´Ì¬µÄÖ¸Õë
 	m_pluaState=luaL_newstate();
-    //å¹¶æ‰“å¼€æ‰€æœ‰ç³»ç»Ÿæä¾›çš„åº“
+	//²¢´ò¿ªËùÓÐÏµÍ³Ìá¹©µÄ¿â
 	luaL_openlibs(m_pluaState);
-    
-    //å®Œæ•´è·¯å¾„
-    std::string fullPath=FileUtils::getInstance()->fullPathForFilename("config.lua");
-    //è¯»å–æ–‡ä»¶
-    luaL_dofile(m_pluaState, fullPath.c_str());
-    //å¯åŠ¨è°ƒç”¨æ–‡ä»¶
-    lua_pcall(m_pluaState, 0, 0, -1);
 	
-	lua_pushcfunction(m_pluaState, l_show);
-	lua_setglobal(m_pluaState, "show");
+	std::string fullpath=FileUtils::getInstance()->fullPathForFilename("config.lua");
+	luaL_dofile(m_pluaState,fullpath.c_str());
+	lua_pcall(m_pluaState,0,0,-1);
 }
 
-void LuaEngine::configWindowsContentSize(int*pWidth ,int*pHeight)
+//·ÃÎÊluaÎÄ¼þÖÐ±äÁ¿
+void LuaEngine::readVariable()
 {
-    //è°ƒç”¨luaä¸­å˜é‡å’Œå‡½æ•°(å½“ç„¶luaä¸­å‡½æ•°ä¹Ÿæ˜¯å˜é‡)æ—¶ï¼Œç¬¬ä¸€æ­¥
-    lua_getglobal(m_pluaState, "width");
-    //åˆ¤æ–­æ˜¯å¦å¯ä»¥è½¬æ¢ä¸ºæ•°å­—ç±»åž‹ï¼Œè‹¥å¯ä»¥åˆ™è½¬æ¢ï¼Œä¸æ˜¯åˆ¤æ–­æ˜¯å¦ä¸ºæ•°å­—ç±»åž‹
-    if(lua_isnumber(m_pluaState, -1))
-    {
-        int width=(int)lua_tonumber(m_pluaState, -1);
-        log("width is :%d",width);
-        *pWidth=width;
-    }
-    
-    lua_getglobal(m_pluaState, "height");
-    if(lua_isnumber(m_pluaState, -1))
-    {
-        int height =(int)lua_tonumber(m_pluaState, -1);
-        log("height is %d",height);
-        *pHeight=height;
-    }
+	std::string path = FileUtils::getInstance()->fullPathForFilename("my.lua");
+	log("path:%s",path.c_str());
+	bool isExit= FileUtils::getInstance()->isFileExist(path);
+	log("%d,isExit",isExit);
 
-    //åˆ¤æ–­æ˜¯å¦å¯ä»¥è½¬æ¢ä¸ºæ•°å­—ç±»åž‹ï¼Œè‹¥å¯ä»¥åˆ™è½¬æ¢ï¼Œä¸æ˜¯åˆ¤æ–­æ˜¯å¦ä¸ºæ•°å­—ç±»åž‹,æ¯”å¦‚å¯ä»¥å°è¯•å°†nameèµ‹å€¼ä¸º18æ¥æ£€æµ‹
-    lua_getglobal(m_pluaState, "name");
-    if(lua_isstring(m_pluaState, -1))
-    {
-        char* name =(char*)lua_tostring(m_pluaState, -1);
-        log("name is %s",name);
-        //*pHeight=height;
-    }
+	//int vvv=luaL_dofile(m_pluaState,"my.lua");////ÕâÔÚwin32ÏÂÄÜÓÃ£¬µ«ÊÇÎªÁË¿çÆ½Ì¨µÄÐèÒª£¬±ØÐëÓÃFileUtils
+	int vvv=luaL_dofile(m_pluaState,path.c_str());
+	log("zhan:%d",lua_gettop(m_pluaState));
+	int err_rlt=lua_pcall(m_pluaState,0,0,-1);
+	CCASSERT(err_rlt!=-1,"lua_pcall return -1");
+	
+	//¶ÁÒ»´Î´¦ÀíÒ»´Î£¬local±äÁ¿ÊÇÎÞ·¨»ñÈ¡µÄ
+	lua_getglobal(m_pluaState,"username");//°ÑÈ«¾Ö±äÁ¿ "username" ÀïµÄÖµÑ¹ÈëÕ»¶¥
+	if(lua_isstring(m_pluaState,-1))//¹¦ÄÜÊÇÅÐ¶ÏÊÇ·ñÄÜ×ª»¯³É×Ö·û´®,²»ÊÇÅÐ¶ÏÀàÐÍ
+	{
+		const char* rlt1=lua_tostring(m_pluaState,-1);//¶ÔÕ»-1´¦µÄ×ª»»
+		log("rlt1 is :%s", rlt1);
+	}
+	lua_pop(m_pluaState,1);//µ¯³öÕ»¶¥Öµ
+
+	lua_getglobal(m_pluaState,"num");
+	if(lua_isnumber(m_pluaState,-1))
+	{
+		int rlt2=lua_tonumber(m_pluaState,-1);
+		log("rlt2 is :%d", rlt2);	
+	}
+	lua_pop(m_pluaState,1);
+
+	lua_getglobal(m_pluaState,"bu");
+	int rlt3=lua_toboolean(m_pluaState,-1);
+	log("rlt3 is :%d", rlt3);	
+	lua_pop(m_pluaState,1);
+	
+	
 }
 
-
-
-/*
- è¯»å–è°ƒç”¨luaä¸­çš„å‡½æ•°
- */
-void LuaEngine::callLuaFunction()
+//·ÃÎÊluaÎÄ¼þÖÐº¯Êý
+void LuaEngine::loadFunction()
 {
-/*******************************************************/
-    //1.æ­¤å¤„initå·²ç»è¯»å–äº†æ–‡ä»¶ï¼Œä¸ç”¨å†æ¬¡è¯»å–
-    //2.å‡†å¤‡è°ƒç”¨å‡½æ•°test01
-	lua_getglobal(m_pluaState,"test01");
+	std::string path = FileUtils::getInstance()->fullPathForFilename("my.lua");
+	log("path:%s",path.c_str());
+	bool isExit= FileUtils::getInstance()->isFileExist(path);
+	log("%d,isExit",isExit);
 
-    //3.è°ƒç”¨å‡½æ•°test01ï¼Œæ­¤å¤„å‡ ä¸ªå‚æ•°ï¼Œå‡ ä¸ªç»“æžœä¸€å®šè¦å†™å¯¹
-    int err_rlt01=lua_pcall(m_pluaState, 0, 0, -1);
-	CCASSERT(err_rlt01!=-1,"å¯¹ä¸èµ·ï¼Œè°ƒç”¨å‡½æ•°å¤±è´¥ï¼");
+	int vvv=luaL_dofile(m_pluaState,path.c_str());
+	log("zhan:%d",lua_gettop(m_pluaState));
+	int err_rlt=lua_pcall(m_pluaState,0,0,-1);
+	CCASSERT(err_rlt!=-1,"call failed¡£");
 
-/*******************************************************/
-    lua_getglobal(m_pluaState,"test02");
-    
-    //åŽ‹å‚æ•°é¡ºåºå’Œluaå‡½æ•°ä¸­å‚æ•°é¡ºåºä¸€æ ·
-    lua_pushnumber(m_pluaState, 20);
-    lua_pushstring(m_pluaState,"has gotten the key." );
-    
-    int err_rlt02=lua_pcall(m_pluaState, 2, 0, -1);
-	CCASSERT(err_rlt02!=-1,"å¯¹ä¸èµ·ï¼Œè°ƒç”¨å‡½æ•°å¤±è´¥ï¼");
-    
-/*******************************************************/
-    lua_getglobal(m_pluaState,"test03");
-    
-    int err_rlt03=lua_pcall(m_pluaState, 0, 2, -1);
-    CCASSERT(err_rlt03!=-1,"å¯¹ä¸èµ·ï¼Œè°ƒç”¨å‡½æ•°å¤±è´¥ï¼");
+	lua_getglobal(m_pluaState,"getrlt");//Ö´ÐÐÍê´Ë²½£¬º¯ÊýÔÚÕ»¶¥
+	//Ìí¼Ó²ÎÊý
+	lua_pushnumber(m_pluaState,12 );//Ö´ÐÐÍê´Ë²½£¬12ÔÚÕ»¶¥£¬º¯ÊýÔÚµÚ¶þ¸öÎ»ÖÃ£¨-2µÄÎ»ÖÃ£©
+	lua_pushstring(m_pluaState,"secondPara" );
 
+	err_rlt= lua_pcall(m_pluaState,2,2,-1);//Ö´ÐÐÍê´Ë²½£¬·µ»ØÖµÔÚÕ»¶¥,ÖÐ¼äÁ½¸ö²ÎÊý´ú±ígetrltº¯Êýº¬ÓÐÁ½¸ö²ÎÊý£¬Á½¸ö·µ»ØÖµ£¬-1Îª´íÎó·µ»ØÖµ
 
-    char* rlt1 =(char*)lua_tostring(m_pluaState, -1);
-    char* rlt2 =(char*)lua_tostring(m_pluaState, -2);
-    log("%s",rlt1);//ä»Žç»“æžœå¯ä»¥çœ‹å‡ºï¼Œå…ˆæŠŠç¬¬ä¸€ä¸ªè¿”å›žå€¼åŽ‹å…¥æ ˆ
-    log("%s",rlt2);
+	CCASSERT(err_rlt!=-1,"sorry,read failed.");
 
+	std::string n_rlt1 =lua_tostring(m_pluaState,-1);
+	int n_rlt2 =lua_tonumber(m_pluaState,-2);
+	log("the return var1 is %s",n_rlt1.c_str());
+	log("the return num2 is %d",n_rlt2);
 }
 
-/*
- lua_next() è¿™ä¸ªå‡½æ•°çš„å·¥ä½œè¿‡ç¨‹æ˜¯ï¼š
- 1) å…ˆä»Žæ ˆé¡¶å¼¹å‡ºä¸€ä¸ª key
- 2) ä»Žæ ˆæŒ‡å®šä½ç½®çš„ table é‡Œå–ä¸‹ä¸€å¯¹ key-valueï¼Œå…ˆå°† key å…¥æ ˆå†å°† value å…¥æ ˆ
- 3) å¦‚æžœç¬¬ 2 æ­¥æˆåŠŸåˆ™è¿”å›žéž 0 å€¼ï¼Œå¦åˆ™è¿”å›ž 0ï¼Œå¹¶ä¸”ä¸å‘æ ˆä¸­åŽ‹å…¥ä»»ä½•å€¼
- 
- ç¬¬ 2 æ­¥ä¸­ä»Ž table é‡Œå–å‡ºæ‰€è°“â€œä¸‹ä¸€å¯¹ key-valueâ€æ˜¯ç›¸å¯¹äºŽç¬¬ 1 æ­¥ä¸­å¼¹å‡ºçš„ key çš„ã€‚table é‡Œç¬¬ä¸€å¯¹ key-value çš„å‰é¢æ²¡æœ‰æ•°æ®ï¼Œæ‰€ä»¥å…ˆç”¨ lua_pushnil() åŽ‹å…¥ä¸€ä¸ª nil å……å½“åˆå§‹ keyã€‚
- 
- æ³¨æ„å¼€å§‹çš„æ—¶å€™å…ˆç”¨ lua_gettop() å–äº†ä¸€ä¸‹ table åœ¨æ ˆä¸­çš„æ­£ç´¢å¼•ï¼ˆå‰é¢è¯´è¿‡äº†ï¼Œåœ¨è¿›è¡Œè¿™ä¸ª lua_next() è¿‡ç¨‹ä¹‹å‰å…ˆå°† table å…¥æ ˆï¼Œæ‰€ä»¥æ ˆå¤§å°å°±æ˜¯ table çš„æ­£ç´¢å¼•ï¼‰ï¼ŒåŽé¢çš„ lua_next() è¿‡ç¨‹ä¸­ä¸æ–­çš„æœ‰å…ƒç´ å‡ºå…¥æ ˆï¼Œæ‰€ä»¥ä½¿ç”¨æ­£ç´¢å¼•æ¥å®šä½ table æ¯”è¾ƒæ–¹ä¾¿ã€‚
- 
- åˆ°äº† table ä¸­å·²ç»æ²¡æœ‰ key-value å¯¹æ—¶ï¼Œlua_next() å…ˆå¼¹å‡ºæœ€åŽä¸€ä¸ª keyï¼Œç„¶åŽå‘çŽ°å·²ç»æ²¡æœ‰æ•°æ®äº†ä¼šè¿”å›ž 0ï¼Œwhile å¾ªçŽ¯ç»“æŸã€‚æ‰€ä»¥è¿™ä¸ª lua_next() è¿‡ç¨‹ç»“æŸä»¥åŽ table å°±åˆä½äºŽæ ˆé¡¶äº†ã€‚
- */
-int table_next(lua_State *L,int i,char**k,char **v)
+const char*getFiled(lua_State*L, char*Key)
 {
-    if(lua_next(L , i )!=0)
-    {
-        // çŽ°åœ¨æ ˆé¡¶ï¼ˆ-1ï¼‰æ˜¯ valueï¼Œ-2 ä½ç½®æ˜¯å¯¹åº”çš„ key
-        *k = (char*)lua_tostring(L , -2);
-        *v = (char*)lua_tostring(L , -1);
-        lua_pop(L , 1);//å¼¹å‡º valueï¼Œè®© key ç•™åœ¨æ ˆé¡¶
-        return 1;
-    }
-    else
-        return 0;
+	const char* rlt = nullptr;
+	const char* rlt2 = nullptr;
 
+	lua_pushstring(L, Key);//ÍÆÈë¼ü
+	lua_gettable(L,-2);//ÒÔÕ»¶¥µÄ×Ö·û´®(key)Îª¹Ø¼ü×Ö£¬ÔÚÕ»Ë÷ÒýÎ»ÖÃ( -2)µÄ±í(table)ÖÐ²éÑ¯¸Ã¹Ø¼ü×ÖµÄÖµ(value)£¬È»ºó½«Õ»¶¥µÄkey³öÕ»£¬ÔÙ½«valueÑ¹Õ»
+
+	if(lua_isstring(L,-1))
+	{
+		rlt = lua_tostring(L,-1);//Öµ×Ô¶¯·µ»Øµ½Õ»¶¥
+		lua_pop(L,1);
+		if(lua_istable(L,-1))
+		{
+			rlt2= lua_tostring(L,-1);
+			log("xbxbxbxbxb===>%s",rlt2);
+		}
+
+		return rlt;
+	}
+
+	return "wrong";
+}
+//·ÃÎÊluaÖÐµÄtable
+void LuaEngine::loadTable()
+{
+	lua_State*L=luaL_newstate();
+	luaL_openlibs(L);
+	std::string path = FileUtils::getInstance()->fullPathForFilename("configure.lua");
+	log("path:%s",path.c_str());
+	bool isExit= FileUtils::getInstance()->isFileExist(path);
+	
+	luaL_dofile(L,path.c_str());
+	//Æô¶¯ µ÷ÓÃÎÄ¼þ"configure.lua"
+	lua_pcall(L,0,0,-1);
+
+	lua_getglobal(L,"application");
+	if(lua_istable(L,-1))
+	{
+		log("application is table");
+		std::string width = getFiled(L,"width");
+		std::string height = getFiled(L,"height");
+		log("width is %s, height is %s .",width.c_str(),height.c_str());
+		int mwidth = atoi(width.c_str());
+		int mheight = atoi(height.c_str());
+	}
 }
 
-//ç¬¬äºŒç§éåŽ†tableçš„æ–¹å¼
-void test()
+int table_next(lua_State*L, int i, char **k, char **v)
 {
-    lua_State *L;
-    int t_idx;
-    char *k=NULL;
-    char *v=NULL;
-    
-    std::string path=FileUtils::getInstance()->fullPathForFilename("configTab.lua");
-    
-    L=luaL_newstate();
-    luaL_openlibs(L );
-    luaL_dofile(L , path.c_str());
-    lua_pcall(L , 0, 0, -1);
-    
-    lua_getglobal(L , "testtable");
-    t_idx=lua_gettop(L );//è¿”å›žæ ˆé¡¶å…ƒç´ çš„ç´¢å¼•,å³å½“å‰tableæ‰€åœ¨çš„ä½ç½®
-    lua_pushnil(L );
-    while (table_next(L , t_idx, &k, &v)!=0) {
-        fprintf(stderr, "the key is %s=====the value is %s\n",k,v);
-    }
-    
-    lua_close(L );
-    L =NULL;
+	int nIndex = lua_gettop( L );//¶ÑÕ»ÉÏµÄÔªËØ¸öÊý
+	log("table_next==========>%d",nIndex);
+
+	//´ÓÕ»ÉÏµ¯³öÒ»¸ö key£¨¼ü£©£¬ È»ºó°ÑË÷ÒýÖ¸¶¨µÄ±íÖÐ key-value£¨½¡Öµ£©¶ÔÑ¹Èë¶ÑÕ» £¨¼´Ö¸¶¨ key ºóÃæµÄÏÂÒ» (next) ¶Ô£©¡£
+	//´Ë´¦µÚÒ»´Î¼´Ë÷Òý1Ö¸¶¨µÄË÷Òý
+	if (lua_next(L, i ) !=0)
+	{
+		*k = (char*)lua_tostring(L, -2);
+		*v = (char*)lua_tostring(L, -1);
+		lua_pop(L, 1);						//±£Áô 'key' ×öÏÂÒ»´Îµü´ú
+		return 1;
+	}
+	else
+		return 0;
 }
 
-//ç¬¬ä¸€ç§éåŽ†tableçš„æ–¹å¼
-const char* getfiled(lua_State* L ,const char* key )
+void LuaEngine::loadAllTable()
 {
-    char *rlt=NULL;
-    lua_pushstring(L , key);
-    //lua_gettableçš„ä½œç”¨å°±æ˜¯ä»¥æ ˆé¡¶çš„å€¼ä½œä¸ºkeyæ¥è®¿é—®-2ä½ç½®ä¸Šçš„table
-    lua_gettable(L , -2);//ä¸Žtest_read_tableç»“åˆæ¥çœ‹
-    if (lua_isstring(L , -1)) {
-        rlt =(char*)lua_tostring(L , -1);
-        //æŠŠæ ˆé¡¶çš„å€¼ç§»å‡ºæ ˆï¼Œä¿è¯æ ˆé¡¶æ˜¯tableä»¥ä¾¿éåŽ†ã€‚
-        lua_pop(L , 1);
-        return rlt;
-    }
-    return "wrong";
-}
+	lua_State *L;
+	char *k=nullptr;
+	char *v=nullptr;
 
-void LuaEngine::test_read_table()
-{
-    lua_State *L = luaL_newstate();
-    luaL_openlibs(L);
-    
-    std::string fullPath=FileUtils::getInstance()->fullPathForFilename("configTab.lua");
-    luaL_dofile(L , fullPath.c_str());
-    lua_pcall(L, 0, 0, -1);
-    
-    lua_getglobal(L, "application");
-    if (lua_istable(L, -1)) {
-        log("application is a table.");
-    }
-    const char*width = getfiled(L , "width");
-    const char*height= getfiled(L , "height");
-    log("table's width is : %s",width);
-    log("table's height is : %s",height);
-    //int nWidth  =   atoi(width);
-    //int nHeight =   atoi(height);
-    
-    test();
-    lua_close(L);
-    L= NULL;
+	std::string path = FileUtils::getInstance()->fullPathForFilename("configure.lua") ;
 
+	L = luaL_newstate();
+	luaL_openlibs(L);
+	luaL_dofile(L,path.c_str());
+	lua_pcall(L,0,0,0);
+
+	lua_getglobal(L,"hero");
+	lua_pushnil(L);
+	while (table_next(L,1,&k,&v)!= 0)
+	{
+		log("key is :%s ==== Value is %s",k,v);
+	}
+
+	lua_close(L);
 }

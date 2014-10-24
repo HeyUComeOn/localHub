@@ -8,9 +8,10 @@ public:
 	LuaEngine();
 	~LuaEngine();
 	static LuaEngine*getInstance();
-	void callLuaFunction();
-    void configWindowsContentSize(int*pWidth ,int*pHeight);
-    void test_read_table();
+	void readVariable();
+	void loadFunction();
+	void loadTable();
+	void loadAllTable();
 private:
 	static LuaEngine* i;
 	void init();
