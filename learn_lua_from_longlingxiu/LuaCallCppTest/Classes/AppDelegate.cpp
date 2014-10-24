@@ -55,7 +55,8 @@ static int l_getName(lua_State*L)
 
 static int l_showOnePara( lua_State* L)
 {
-    const char* value= luaL_checkstring(L , -1);//Checks whether the function argument (which at -1) is a string and returns this string
+    //Checks whether the function argument (which at -1) is a string and returns this string
+    const char* value= luaL_checkstring(L , -1);
     lua_pushstring(L , value);
     
     // 一个返回值
