@@ -1,3 +1,4 @@
+--了解、开发用的不多
 --1、简单模型：所有的操作针对于当前文件，2、print默认有换行符
 --3.不可以返回table
 io.write("sin(3)=",math.sin(3),"\n")
@@ -19,6 +20,7 @@ tt = io.read("*all")
 
 print(tt)
 
+--'rb'读二进制文件，'wb'写二进制文件
 local f =assert(io.open("ff.lua",'r'))
 local t =f:read("*all")
 print(t)

@@ -20,9 +20,11 @@ write_st("kkkkkkkkk")
 function write_other_st(msg)
 local file = assert(io.open("D:\\Documents\\GitHub\\localHub\\ide\\ldtWorkplace\\io_test\\src\\a.txt","a"))
 	local temp =io.input()
+	--中间插入了一个其它的文件
 	file:input("newinput.txt")
 	file:write(msg)
   io.input():close()
+  --操作完恢复之前操作
   io.input(temp)
 end
 ]]
