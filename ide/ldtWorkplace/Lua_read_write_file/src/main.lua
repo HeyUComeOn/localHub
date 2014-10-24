@@ -1,4 +1,5 @@
 --'w'写操作；'a'追加，注意转义字符'\\'
+--首先获取流的指针或句柄
 local f = assert(io.open("D:\\Documents\\GitHub\\localHub\\ide\\ldtWorkplace\\Lua_read_write_file\\src\\forUsedFile.txt",'r'));
 local str=f:read("*all");
 f:close()--关流

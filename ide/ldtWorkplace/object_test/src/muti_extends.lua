@@ -1,3 +1,4 @@
+--这个是多继承
 local function search( k, plist)
 
   for i= 1,#plist do
@@ -17,7 +18,7 @@ function createClass(...)
 
   c.__index = c
 
-  function c:new ( o )
+function c:new ( o )
     o = o or {}
     setmetatable(o,c)
     return o

@@ -1,3 +1,5 @@
+--lua只是模拟面向对象，用例如a=Account来模拟创建一个对象
+
 Account = {
 balance = 12
 
@@ -8,7 +10,7 @@ function Account.count( self , v )
   print ("the balance is : "..self.balance)
 end
 
-function Account:myToString()
+function Account:myToString()--C++为双冒号
   print ( "此值为"..self.balance)
 end
 

@@ -9,7 +9,7 @@ showName("ostv")
 
 
 app/test/cc.lua
-require("app.test.cc")
+require("app.test.cc")--自动替换为分隔符
 a_b.lua
 require ("a.b")--智能搜寻
 ]]

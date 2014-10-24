@@ -1,4 +1,5 @@
---print默认有换行
+--1、简单模型：所有的操作针对于当前文件，2、print默认有换行符
+--3.不可以返回table
 io.write("sin(3)=",math.sin(3),"\n")
 
 io.write(string.format("sin(3)=%.4f\n",math.sin(3)))
@@ -6,7 +7,7 @@ io.write(string.format("sin(3)=%.4f\n",math.sin(3)))
 io.write("12",12,1,"\n")
 s=12
 f=1
-print("12"..s..f)
+print("12"..s..f)--格式更加简单
 
 --读取
 --*all 表示读取整个文件

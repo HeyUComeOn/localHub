@@ -1,3 +1,5 @@
+--面向对象方式
+--首先获取流的指针或句柄
 local f=assert(io.open("D:\\Documents\\GitHub\\localHub\\ide\\ldtWorkplace\\io_test\\src\\a.txt",'r'))
 local t=f:read("*all")
 print(t)

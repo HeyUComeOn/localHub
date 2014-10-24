@@ -27,7 +27,7 @@ end
 print("=============排序后===============")
 
 --3.排序
-table.sort(t)
+table.sort(t)--从小到大
 local function my_sort(x,y)
   if x>y then
     return true
@@ -53,7 +53,7 @@ function rcont(l)
   for key, var in ipairs(res) do
     print(key,var)
   end
-  return table.concat(res)
+  return table.concat(res)    --这是连接方法
 end
 
 local rlt=rcont(str_t)
@@ -61,7 +61,7 @@ print(rlt)
 print("=============nil后===============")
 
 --5.
-t[2] = nil  --索引不变
+t[2] = nil  --索引不变不重新排序，table.remove索引重新排序
   for key, var in ipairs(t) do
     print(key,var)   --nil之後不輸出
   end
