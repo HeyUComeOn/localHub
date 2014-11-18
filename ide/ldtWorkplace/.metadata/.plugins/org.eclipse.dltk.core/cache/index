@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<cache:CacheIndex xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:cache="http://eclipse.org/dltk/cache_model" lastIndex="122" environment="org.eclipse.dltk.core.environment.localEnvironment">
+<cache:CacheIndex xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:cache="http://eclipse.org/dltk/cache_model" lastIndex="254" environment="org.eclipse.dltk.core.environment.localEnvironment">
   <entries path="D:/Documents/GitHub/localHub/ide/ldtWorkplace/luatest1/src" timestamp="1406637746192" lastAccessTime="1406868258419">
     <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/361354536/1.idx"/>
   </entries>
@@ -59,4 +59,56 @@
   <entries path="D:/Documents/GitHub/localHub/ide/ldtWorkplace/object_test/src/muti_extends.lua" timestamp="1406978582925" lastAccessTime="1408179472004"/>
   <entries path="D:/Documents/GitHub/localHub/ide/ldtWorkplace/object_test/src/private_test.lua" timestamp="1407036370172" lastAccessTime="1408179472021"/>
   <entries path="D:/Documents/GitHub/localHub/ide/ldtWorkplace/object_test/src/extend_test.lua" timestamp="1407034429636" lastAccessTime="1408179472045"/>
+  <entries path="D:/Documents/gitHub/localHub/ide/ldtWorkplace/object_test/src" timestamp="1407034712195" lastAccessTime="1414075159107">
+    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/4091063741/123.idx"/>
+  </entries>
+  <entries path="D:/Documents/gitHub/localHub/ide/ldtWorkplace/object_test/src/private_test.lua" timestamp="1407036370172" lastAccessTime="1414070060774">
+    <attributes name="indexed" location="2838196607/368912686/135.idx"/>
+  </entries>
+  <entries path="D:/Documents/gitHub/localHub/ide/ldtWorkplace/xml_paser/src/slaxml.lua" timestamp="1397805060000" lastAccessTime="1414070060854">
+    <attributes name="indexed" location="2838196607/1781927024/143.idx"/>
+  </entries>
+  <entries path="D:/Documents/gitHub/localHub/ide/ldtWorkplace/xml_paser/src" timestamp="1407926410409" lastAccessTime="1414053760000">
+    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/2760091787/125.idx"/>
+  </entries>
+  <entries path="D:/Documents/gitHub/localHub/ide/ldtWorkplace/xml_paser/src/main.lua" timestamp="1407928041164" lastAccessTime="1414070060843">
+    <attributes name="indexed" location="2838196607/1781927024/141.idx"/>
+  </entries>
+  <entries path="D:/Documents/gitHub/localHub/ide/ldtWorkplace/meiyongdewenjian/src" timestamp="1414038066174" lastAccessTime="1415237666697">
+    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/570662934/127.idx"/>
+  </entries>
+  <entries path="D:/Documents/gitHub/localHub/ide/ldtWorkplace/xml_paser/src/content.xml" timestamp="1407927111820" lastAccessTime="1414053759969"/>
+  <entries path="D:/Documents/gitHub/localHub/ide/ldtWorkplace/io_test/src" timestamp="1407073223479" lastAccessTime="1414140796570">
+    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/2152273994/145.idx"/>
+  </entries>
+  <entries path="D:/Documents/gitHub/localHub/ide/ldtWorkplace/Lua_read_write_file/src" timestamp="1406866037831" lastAccessTime="1414070059104">
+    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/3667880075/147.idx"/>
+  </entries>
+  <entries path="D:/Documents/gitHub/localHub/ide/ldtWorkplace/io_test/src/a.txt" timestamp="1407074184726" lastAccessTime="1414140795237"/>
+  <entries path="D:/Documents/gitHub/localHub/ide/ldtWorkplace/Serialization/src" timestamp="1406637746192" lastAccessTime="1415092557703">
+    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/458289329/157.idx"/>
+  </entries>
+  <entries path="D:/Documents/gitHub/localHub/ide/ldtWorkplace/Module/src/aa.lua" timestamp="1406888760448" lastAccessTime="1416021829857"/>
+  <entries path="D:/Documents/gitHub/localHub/ide/ldtWorkplace/Module/src" timestamp="1406890238688" lastAccessTime="1416021853736">
+    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/3168185704/161.idx"/>
+  </entries>
+  <entries path="D:/Documents/gitHub/localHub/ide/ldtWorkplace/Module/src/mymodule.lua" timestamp="1406890974588" lastAccessTime="1416021829954"/>
+  <entries path="D:/Documents/gitHub/localHub/ide/ldtWorkplace/math_test/src" timestamp="1414077277126" lastAccessTime="1416021556111">
+    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/2436075294/163.idx"/>
+  </entries>
+  <entries path="D:/Documents/gitHub/localHub/ide/ldtWorkplace/table_package_test/src" timestamp="1407071199275" lastAccessTime="1416021856355">
+    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/3018435364/165.idx"/>
+  </entries>
+  <entries path="D:/Documents/gitHub/localHub/ide/ldtWorkplace/string_package_test/src" timestamp="1407057818523" lastAccessTime="1416032896858">
+    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/849825286/171.idx"/>
+  </entries>
+  <entries path="D:/Documents/gitHub/localHub/ide/ldtWorkplace/Serialization/src/main.lua" timestamp="1414072714999" lastAccessTime="1416021555912">
+    <attributes name="indexed" location="2838196607/1724142460/205.idx"/>
+  </entries>
+  <entries path="D:/Documents/gitHub/localHub/ide/ldtWorkplace/meiyongdewenjian/src/main.lua" timestamp="1415111911744" lastAccessTime="1416021557292">
+    <attributes name="indexed" location="2838196607/341301999/219.idx"/>
+  </entries>
+  <entries path="D:/Documents/gitHub/localHub/ide/ldtWorkplace/math_test/src/math_test.lua" timestamp="1415372951294" lastAccessTime="1416021556096">
+    <attributes name="indexed" location="2838196607/1876698904/247.idx"/>
+  </entries>
 </cache:CacheIndex>
