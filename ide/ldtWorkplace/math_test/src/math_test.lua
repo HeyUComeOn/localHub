@@ -5,7 +5,7 @@
 print(os.time())
 print(os.date())
 
---隨機數
+--随机数
 --有三种用法： 无参调用， 产生 （0,1） 之间的浮点随机数； 只有参数 n， 产生 1-n 之间的整数； 有两个参数 n， m， 产生 n-m 之间的随机整数
 math.randomseed(os.time())--设置随机种子
 print(math.random())

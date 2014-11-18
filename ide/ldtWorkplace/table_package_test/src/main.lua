@@ -69,3 +69,16 @@ t[2] = nil  --索引不变不重新排序，table.remove索引重新排序
 --6.
 print(#t) --nil之後不計長度
 print(table.maxn(t))   --改用maxn讀取最大元素個數，包括nil
+
+
+
+print("=============k后===============")
+k={d=3,r=4}
+print(k.d)
+
+
+--7.
+print("============特殊索引后=============")
+local kl={}
+kl[3.5]=6
+print(kl[3.5])

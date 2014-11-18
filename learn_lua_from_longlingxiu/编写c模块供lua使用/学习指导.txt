@@ -20,7 +20,7 @@ static const luaL_Reg myReg[] = {
     
     {"rlt1",showRlt1},
     {"rlt2",showRlt2},
-    {NULL,NULL}
+    {NULL,NULL}                ----->я╜╩╥╣джу╣Ц
     
 };
 

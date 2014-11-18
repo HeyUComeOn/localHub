@@ -33,3 +33,12 @@ print(l)
 --用替换实现
 s=string.gsub(testStr,"Lua","")--把第二个参数替换为第三个
 print(s)
+
+--转义字符
+function dsd()
+return '\\"'
+end
+function ssss()
+return dsd()
+end
+print(ssss())

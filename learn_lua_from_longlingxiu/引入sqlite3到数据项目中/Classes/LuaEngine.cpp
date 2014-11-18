@@ -54,7 +54,7 @@ void LuaEngine::init()
         lua_setfield(m_pLuaState, -2, libs->name);
     }
     
-    lua_pop(m_pLuaState, -2);
+    lua_pop(m_pLuaState, -2);//µ¯³öpackage.preload
     std::string path=FileUtils::getInstance()->fullPathForFilename("my.lua");
     
     luaL_dofile(m_pLuaState, path.c_str());

@@ -17,3 +17,9 @@ require ("a.b")--智能搜寻
 local tt = require("mymodule")
 tt.showName()
 tt:showName()
+
+function s()
+return 20
+end
+local vith = s
+print(vith)--打印出函数地址
